@@ -1,0 +1,26 @@
+.box { 
+    width: 100vw;
+    margin: auto;
+    height: 80vh;
+    background-color: aquamarine;
+}
+
+.ball {
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: cadetblue;
+    position: absolute;
+    top: 72vh;
+    animation: animateX 3s linear infinite , animateY 1s ease-out infinite alternate 
+}
+
+@keyframes animateX {
+    from { left: 0;} to 
+    {left: 100vw;}
+}
+
+@keyframes animateY {
+    from {top: 72vh;}
+    to {top: 1vh;}
+}
