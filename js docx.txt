@@ -1,0 +1,93 @@
+to link js file with html , before ending of body tag use <script src="<file name of js> 
+
+notes available on cod with harry .com
+
+var is global scoped whereas let and const are block scoped . var can be updated and redefined whereaslet can be updated only and const dono hi nhi . 
+semicolon is used to end every statement declared if you wish to use it . 
+
+let is most commonly used instead of var in js .
+
+there are two data sets in js which are object and data type , 7 primitive data types are string , number , null , undefined , big int , boolian , symbol . but typeof null is object as it was set by mistake in early days and due to reliability of so much of code already written on its basis , it cant be changed now . 
+object is like a dictionary which is used to store info about a particular subject . it stores values in form of key - value pair . curly brackets are used while working with objects
+
+o.salary = 69 matlab o object me ek key salary ko 69 value assign krdi . 
+
+== is used to compare the value only , it dont check the data type . if you want to compare both value and data type then use === . 
+logical operator , and is && here || is or here , ! stands for not . 
+
+if - else blocks : only if block ; if - else block ; if else-if else block .. ; 
+last one is like if elif else in python . here it is else if . 
+
+ternary operator : example let c = a>b ? (a-b) : (b-a) 
+translates to : if (a>b) { let c = a-b} else { let c = b-a } , here ?  and : are ternary operator which are kind of short cut for if else condition . 
+
+console.log() works like print works in python . 
+
+loops : for , for in , for of , while , do while , for each loop .
+
+for loop syntax : for (statemnet1 , statemnet2 , statement3) {code to be executed like console,log(a+i)} where statemnet1 is one time condition for initialization of loop , statement 2 is base condition for loop which is checked everytime and statement3 is iteration . 
+
+example : let a = 1 
+            for (let i = 0 ; i<100 , i ++) { console.log(a+i)} . 
+
+for in : example : let obj = { name : "vardaan" , role : "tera baap" , contribution : "tujhe krne me sahyog" }
+    for (const key in obj) {console.log(key)}
+
+for of : used in iterables like strings or arrays . 
+example : for ( const a of "vardaan" ) {console.log(a)} 
+
+while : example : let i = 3 
+                    while(i<6) { 
+                    console.log(i)
+                    i++ }
+
+do-while loop : exampple : 
+        let i = 6 
+            do {console.log(i)
+            i++} 
+            while (i<7)
+summarizing all the loops : 
+for loop is just like for i in range (..) in python . 
+for in is used object , dictionary , key-value iterations 
+for of is like for i in "  " or a list or array etc iterations . 
+while loop is just like python . 
+
+functions : syntax is function <function-name> (parameter) {code to be executed}
+example : function wish(name) { "Good Morning " + name}
+to assign function value to a variable , you must return the value inside the function first . 
+example : sol = wish("vardaan") is not correct but if : function wish(name) { return ("Good Morning " + name) }
+then sol = wish("vardaan") is correct . 
+
+types of argument works similar to python . same things default parameter etc . 
+
+arrow function : used when you want to store function in a variable . similar to lamda in python 
+example : const func1 = (x) => {console.log("I am a fancy arrow function" , x)}
+call : func1(33) etc
+
+strings in JS : indexation is same as in python .  
+template literal : vahi formatted string vali cheez ka fancy name hai ye . 
+let v = "Vardaan"
+example : console.log(`My name is ${v}`) , this special comma is used known as back tick under esc and above tab key . this is used when there are a lot of variables involved .
+this process of formatting a string is called string interpolation . 
+
+escape sequence characters : vahi \n se new line , \r se carriagre return , \ to ignore meaning of a specific symbol in string like before double quotes . 
+
+string methods : 
+let b = "Skanda"
+console.log(b.toUppercase()) , console,log(b.toLowercase()) , console.log(b.length)
+() not aftrer length as length is a property and not a function . 
+
+slicing methods : console.log(b,slice(c,d)) where c and d are indexes and d excluded . 
+for a particular index : console.log(b[2])
+console.log(b.slice(2)) will print all characters from index 2 to end . 
+to replace small string : console.log(b.replace("aan" , "ati")) and it will replace first occurence if multiple are there . 
+
+console.log(b.concat(variable , "string" , ...)) can concatenate multiple strings one after other . 
+trim() removes whitespaces from the string
+.charAt(index) gives character at that index . 
+.indexOf("va") gives starting index of that particular string . 
+.startsWith("ar") gives boolean value of this . 
+.endsWith works similarily . 
+
+* strings are immutable which means you cant change the string once made , you may create another using the same .* 
+
