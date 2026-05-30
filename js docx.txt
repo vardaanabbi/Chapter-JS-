@@ -91,3 +91,37 @@ trim() removes whitespaces from the string
 
 * strings are immutable which means you cant change the string once made , you may create another using the same .* 
 
+array : let arr = [1,4,7] . arrays are mutable objects . 
+array methods: .toString() converts array elements to a string , .join(" abc ") se comma ki jagah abc aa jayega array me , .pop() se last vala element remove ho jayega
+.push(element) se element last me place ho jayega and returns the length of array  .
+.shift() se first element remove hoga and .unshift(eleemnt) se 0 index pe element chla jayega .
+.concat(a1,a2) will combine these three arrays . delete(arr[3]) removes that element eeping that space as empty . .sort() sorts the array in increasing order . .splice(a,b) se ye array ke b elements return krdega from "a" index and vo elements array se remove ho jayenge . 
+.splice(a,b,c,d) aisa krega ki a position se b numbers remove krke c aur d add krdega array me a position pe . .slice(a,b) will return a new array starting from index a to b exluding b .
+.reverse() reverse the elements in an array . .forEach() function is used to apply a function on each element of the array . 
+example of forEach function use case :
+let Divine = ["Skanda" , "Narayana" , "Bhagwati" , "Shiv"]
+arr.forEach(function(divinity){console.log("Jai Bhagwaan" , divinity)}) 
+apply function to each element of the array . 
+
+in form of arrow function : arr.forEach(element)=>{console.log(element)} 
+
+filter , map , reduce functions :
+
+example : arr = [1,2,3,4,5]
+new_arr = arr.map((e)=> {return e**e})
+
+filter is use to filter out by using a function :
+
+example : arr = [1,4,7,9,81]
+const greaterThan5 = (f)=> {if(f>5) {return True}
+else {return False}}
+console.log(arr.filter(greaterThan5))
+
+reduce function is used to reduce an array to a single output .
+
+example : let arr2 = [3,6,9,12]
+const reduc = (a,b)=> {return a*b}
+console.log(arr2.reduce(reduc))
+
+Array.from(object) this function will create an array from this object passed . 
+example : Array.from("Vardaan)
