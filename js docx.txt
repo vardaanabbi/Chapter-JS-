@@ -125,3 +125,9 @@ console.log(arr2.reduce(reduc))
 
 Array.from(object) this function will create an array from this object passed . 
 example : Array.from("Vardaan)
+
+DOM : docment object model stands for the whole document as an object . document is represented as a tree with nodes and object of nodes . BOM is browser object model where browser offer various methods and features to access different objects of html document like $0 se access kr skte hain under inspect . 
+
+DOM contains various methods and ways to access or target a particular element . 
+various methods are ; document.body.style.color : "red" will apply inline css . similarily
+document.body.childNodes se you will get nodes : text , div etc in the body . text here is actually the empty space before and after of <>tags . we can target through .childNodes , .firstChild , .lastNode , .firstElementChild se youll get first child which is an element and not text , .nextElementSibling , .previousElementSibling se you can target similar element which is element from the same parent . 
