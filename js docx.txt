@@ -128,6 +128,42 @@ example : Array.from("Vardaan)
 
 DOM : docment object model stands for the whole document as an object . document is represented as a tree with nodes and object of nodes . BOM is browser object model where browser offer various methods and features to access different objects of html document like $0 se access kr skte hain under inspect . 
 
+Browser contains an embedded engine known as js engine . every browser have some developer tools . F12 se you can access dev tools . element contains elements , network contains network requests and console includes all errors and log . we can write js commands in the console . 
+benifit of js file is that browser will download it and stpore it in it's cache . 
+console commands : alert() , log() , table() , warn() , error() , info() etc . 
+
+auto correction is BOM where it auto corrects the html file like if you add something after body then browser auto shufts the content inside the body . 
+
 DOM contains various methods and ways to access or target a particular element . 
 various methods are ; document.body.style.color : "red" will apply inline css . similarily
 document.body.childNodes se you will get nodes : text , div etc in the body . text here is actually the empty space before and after of <>tags . we can target through .childNodes , .firstChild , .lastNode , .firstElementChild se youll get first child which is an element and not text , .nextElementSibling , .previousElementSibling se you can target similar element which is element from the same parent . 
+table.rows , table.thead vagera use krke table ke elements ko target kr skte hain . 
+
+Searching the DOM : document.getElementById . example ; let element = document.getElementById("spy1") , spy1.style.bg-color :"black" . similarily douentgetEleentById("<id_name>"),style.<property> se implement ho jayega .
+document.querySelector(".<class_name>") se jo first eleent match hoga is se uspe work krega ye .
+if you want to select all those elements then use querySelectorAll instead of querySelector but you cant direectly apply styles to all elements , youll hae to use for each loop and iterate them one by one because All returns an array  . you can use ant for loop  
+
+
+console.log(document.getElementsByTagName("div")) se you can access elements by tag name .
+other methods : matches ;
+let e = document.getElementsByTagName("div") ; e[3].matches("#box") , returns True , false . 
+closest ;
+e[2].closest(".container")
+contains ; 
+example : document.querySelector(".conatiner").contains(e[2]) , all of them returns boolean . 
+
+There are many functions to use . .innerHTML se we get HTML of that eleemnt , .innerText se we get HTML of that element in text format . example :
+document.querySelector(".container").innerText se we get HTML of elements inside that class and if we use .outerHTML or .outerText se we get HTML of that class as well of elements inside that class . .tagNme se tag pta chl jayega aur .nodeName se node ka pta chl jayega . .text se andar ka text mil jayega . .hidden se element hide ho jayega . ex ; document.querySelector(".container").hidden = true se attribute lg jayega .
+ similarily we can change the innerHTML of that element too . .hasAttribute("<attribute like style>") returns boolean . .getAttribute("attributeName") se we get whats in that attribute . 
+ .setAttribute("style"  , "display : none") se we can change or set attribute . 
+ .attributes se we get all the attributes of that element . .removeAttribute se we can remove attribute . document.designMode = "on" se we can change the design content by backspace etc . 
+
+ data-attributes : you can create custom attributes using this , they must start with "data" like "data-createdby" : "HARI"  in HTML .  .dataset se we can see those . 
+ Insertion Methods : tareeka ; let div = document.createElement("div") ; div.innerHTML = "I have been created by <b> Narayan </b>" ; div.setAttribute("class" , "created") ; document.querySekector(".container").append(div) . append se last me insert hota hai . .prepend se ekdm starting me insert krdega , .before se us element se just pehle , .after se us element ke just after , .repl'
+ With() se us node ko hi replace krdega . 
+ Inserting adjacent HTML : ex ; let cont = document.querySelector(".container") ; cont.insertAdjacentHTML (<b> "position" , "Hello Namaste Sha Shi Kaal </b>") , positions : 
+ beforeBegin , afterBegin , BeforeEnd , afterEnd , positions ke naam me hi position hai . 
+ similarily there are metgjods to insert text , element by insertAdjacenttext/HTML/element . 
+
+ .className se element ki classes return krdega . .classList.add/remove("class-name") , 
+ .classList.toggle("class_name") se toggle ho jayegi . toggle matlab agar hai to remove krdo aur nhi hai to remove krdo . 
