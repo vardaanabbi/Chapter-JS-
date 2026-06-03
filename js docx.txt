@@ -163,6 +163,42 @@ document.querySelector(".container").innerText se we get HTML of elements inside
  beforeBegin , afterBegin , BeforeEnd , afterEnd , positions ke naam me hi position hai . 
  similarily there are metgjods to insert text , element by insertAdjacenttext/HTML/element . 
 
- .className se element ki classes return krdega . .classList.add/remove("class-name") , 
- .classList.toggle("class_name") se toggle ho jayegi . toggle matlab agar hai to remove krdo aur nhi hai to remove krdo . 
+.className se element ki classes return krdega . .classList.add/remove("class-name") , 
+.classList.toggle("class_name") se toggle ho jayegi . toggle matlab agar hai to remove krdo aur nhi hai to remove krdo . 
 
+Events in JS : there are many events listed on MDN page , check events on mouse click like dblclick
+, mousedown (mouse ka button click krne pe) , mouseleave (mouse leke vapis lane pe) etc . 
+contextmenu (jab mouse right click kiya jaye)  . similarly many such keyboard events , form events and other events too . 
+
+addEvenetListener function is applied on element which takes two parameters trigger and function to perform . 
+
+Event Bubbling : it is bubbling of event like when you have added an alert event on clicking on an element which is child of some parent element , when user clicks on that element technically user had also clicked on its parent elements as child lies inside parent element . therefore that alert or some other event propogates through out the parents which is called event bubbling and you can stop it by ; example : 
+button.addEventListener("click" , (e)=> {
+e.stopPropagation()}) , jis element pe ye lgaoge , fir uske repect me event propagate nhi hoga .
+
+EventListener can be removed by using .removeEventListener but handler should be the same . 
+event.type se type of event , event.currentTarget se element that handked the event , event.clientX/clientY se coord of mouse . 
+
+events can be handled through html attrubutes too like argument ; onclick = "alert('hello')" type = "button" . or directly by : event.onclick = function yo want to run . 
+
+setIntervel : it is a function whihc takes a function and time (in ms) after which it repeats . 
+setInterval(()=> {} , 2000) , it can be used like to change bg-color of an element after a fixed interval using some function and this set interval function . 
+other function to look is clearInterval . it is used to cancel setInterval 
+setTimeout same syntax , us se utne interval ke baad ek baar repeat hota hai what you want (function) . clearTimeout se vo timeout hatt jata hai . it is used to cancel setTimeout . 
+
+example ; let time = setTimeout(()=>{element.style.bg-color = "red"} , 3000) means 3 sec ke baad bg color red hojayega 
+but clearTimeout(time) will cancel it if given command before 3 sec . similarily clearInterval works . 
+
+Async nature of JS : like script me 3-4 instructions likh di aur beech me interval vala function bhi hai kahi whihc is async then js us async function ko taal degi ki pehl script run hone do fir baad me jitni interval set hai use last me run kiya jata hai . 
+
+Callback : allback is a function inside a function kind of recurrsion concept . example :
+
+const Callback = (arg)=> {console.log(arg)}
+
+const loadscript = (src , Callback) => {
+    let sc = document.createElement("script") ; sc.src = src ; sc.onload = Callback("Harry") ; document.head.append(sc)
+}
+Pyramid of DOM : when we have callback inside callback and so on , code gets very difficult to manage and looks like a pyramid . Promise() is used to handle this thing . 
+
+snippets are shortcuts for your help , you can create snippets in js by giving them a name , prefix to be used , assigning a body to them and cursor positions too . 
+Promises is a solution to callback hell .it is a promise of code execution .  
