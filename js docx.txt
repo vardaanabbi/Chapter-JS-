@@ -189,16 +189,33 @@ setTimeout same syntax , us se utne interval ke baad ek baar repeat hota hai wha
 example ; let time = setTimeout(()=>{element.style.bg-color = "red"} , 3000) means 3 sec ke baad bg color red hojayega 
 but clearTimeout(time) will cancel it if given command before 3 sec . similarily clearInterval works . 
 
-Async nature of JS : like script me 3-4 instructions likh di aur beech me interval vala function bhi hai kahi whihc is async then js us async function ko taal degi ki pehl script run hone do fir baad me jitni interval set hai use last me run kiya jata hai . 
+Sync : it means the instructions are run in a sequence one after another . ,,eans everything is in a sync . 
+Async nature of JS : exaple you have written a set of instructions and it include an istruction which will take some time say 2 sec to execute but then instructions after that instruction will face an unnecessary delay , so aysnc nature doesnt wait for that instruction to get executed first but skip it till then it gets executed and then after its execution is over , it displays its output  .  
 
-Callback : allback is a function inside a function kind of recurrsion concept . example :
+Callback : callback is a function inside a function kind of recurrsion concept . It is an argument inside another function . example : 
+setTimeout(()=> {console.log("hello"),2000}) , here setTimout is taking a function as an argument which is callback , function inside a function . you can even pass an function which will include other function as well .
 
-const Callback = (arg)=> {console.log(arg)}
-
-const loadscript = (src , Callback) => {
-    let sc = document.createElement("script") ; sc.src = src ; sc.onload = Callback("Harry") ; document.head.append(sc)
-}
-Pyramid of DOM : when we have callback inside callback and so on , code gets very difficult to manage and looks like a pyramid . Promise() is used to handle this thing . 
+Pyramid of doom or Callback hell :This is actually nested callback . when we have callback inside callback and so on , code gets very difficult to manage and looks like a pyramid . Promise() is used to handle this thing . 
 
 snippets are shortcuts for your help , you can create snippets in js by giving them a name , prefix to be used , assigning a body to them and cursor positions too . 
-Promises is a solution to callback hell .it is a promise of code execution .  
+
+Promises is a solution to callback hell . it is a promise of code execution . it takes two paraeters : resolve and reject . new Promise is a keyword which is used as a constructor here . example :
+let pro = new Promise(resolve , reject) {console.log("Promise speaking this side")} . Promise has 3 states : pending , fulifilled and rejected . if resolve() is used then state fulfilled , reject() is used then state is reject , if nothing used then pending() . write that variable in console to check the state and other details of promise . resole and rejet itself are callbacks . resolve() se result lete hain and reject se we can display an error . 
+
+now after promise got resolved or rejcted whatever uske baad hume koi kaam krvana hota hai . if promise get resolved or say state becomes fulfilled then we use promise.then() , isme function pass krne pe tabhi run krega agar promise fulfilled or resolved hua to and we use promise.catch() agar promise reject hone pe kuch kaam krana ho . promise.catch ke andar pass kiya gya function tabhi run krega jab promise reject ho gya ho . 
+
+also promise.then() aur rpomise.catch() me by default success aur error ka message as a paramter passed hota hai , you canp print that too . jaise try and catch me hota tha in python . 
+
+we get promises from API's , api return promise . we use promise.then and promise.catch to use them . 
+promise chains : like we created 2 async functions which takes 4 sec to execute and we called them they get executed at the same time after 4 sec but we want func2 after func1 get executed , so we call func2 inside promise of func1.then which acts like a nested promise or a promise chain . 
+we dont need to use callback now as promises are doing the same task with better syntax and less complex code . 
+chain of .then is refered to promise chain . 
+
+Async await : more better thing is to use Async await . we are studying the methods to handle async functions in JS . callbacks were hell , promises were better and now Async await will be the best approach . 
+
+Async function always return a promise . any function can be turned to an async function by using async keyword .
+await keyword pauses the execution of its surrounding async function until the promise is settled . we can't directly use await . we have to make an async function and inside that we can use await keyword for a function . 
+basically we have achieved that pehle ye kaam ho tab tak parallel me doosra async func na run ho , uske baad run ho using async and await . await keyword stops every other execution till then that function or command is being executed .
+
+IIFE : to use async and await , we have to create a function to use await keyword , for this we can use this IIFE concept in whihc function gets executed as soon as it is defined . to do this syntax is :
+(function ()={}) () which is that you have to keep your function (without any name) in parenthesis , it can be any function : async , arrow etc and then outside that parenthesis you have to other set of parenthesis for execution of this function . so you dont have to seperately call a function . 
