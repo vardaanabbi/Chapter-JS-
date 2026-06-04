@@ -204,7 +204,7 @@ let pro = new Promise(resolve , reject) {console.log("Promise speaking this side
 
 now after promise got resolved or rejcted whatever uske baad hume koi kaam krvana hota hai . if promise get resolved or say state becomes fulfilled then we use promise.then() , isme function pass krne pe tabhi run krega agar promise fulfilled or resolved hua to and we use promise.catch() agar promise reject hone pe kuch kaam krana ho . promise.catch ke andar pass kiya gya function tabhi run krega jab promise reject ho gya ho . 
 
-also promise.then() aur rpomise.catch() me by default success aur error ka message as a paramter passed hota hai , you canp print that too . jaise try and catch me hota tha in python . 
+also promise.then() aur promise.catch() me by default success aur error ka message as a paramter passed hota hai , you canp print that too . jaise try and catch me hota tha in python . 
 
 we get promises from API's , api return promise . we use promise.then and promise.catch to use them . 
 promise chains : like we created 2 async functions which takes 4 sec to execute and we called them they get executed at the same time after 4 sec but we want func2 after func1 get executed , so we call func2 inside promise of func1.then which acts like a nested promise or a promise chain . 
@@ -219,3 +219,23 @@ basically we have achieved that pehle ye kaam ho tab tak parallel me doosra asyn
 
 IIFE : to use async and await , we have to create a function to use await keyword , for this we can use this IIFE concept in whihc function gets executed as soon as it is defined . to do this syntax is :
 (function ()={}) () which is that you have to keep your function (without any name) in parenthesis , it can be any function : async , arrow etc and then outside that parenthesis you have to other set of parenthesis for execution of this function . so you dont have to seperately call a function . 
+
+fetch() is used to fetch api and for requests also . its syntax includes .then two times , it returns 2 promises . one for loading data and second for parsing it into a json form . .json converts data in js object form . like await x.json where x is some defined variable . 
+
+there are requests like : get to get data from the server , post to post some data to server , post is used when sensitive data has to be posted , put req to update data on server and delete req to delete some data from server 
+
+try - catch error handling : parseInt() se strings gets converted to Integer if there is a numer in string form , otherwise it gives error as NaN , we have func to check NaN also as isNan() returns boolean . 
+throw keyword is used to display errors in some conditions , like throw syntaxError . there are many such errors to throw , refer to MdN . 
+syntax for error and catch is ; try { <instruction you wanna try to execute> 
+} catch (error) { <instruction you wanna execute if there is an error>} . this wont work for async functions ! 
+you can also print err.name , err,message , err,stack etc in catch section .  
+
+finally : instruction which is to be executed either try runs or catch runs . finally block actuall significance is inside a function including try , catch and using return in that case because when you return then other section of code below return clause doesn't run but in case of finally it runs , that's actual use of finally clause . 
+
+OOPS in JS : advanced JS topic . class is like an empty form and objects of class are filled up forms . 
+each object has a prototype which helps in adding properties to the object . 
+constructor runs each time an object is created . jo kaam python me self krta tha vo kaam yaha this keyword krta hai . class inherit krne ke liye extends keyword is used . new keyword is used to create an object of a class . 
+you must use super keyword  with same paramter to be passed  to call constructor of class inherited to use it's properties otherwise there will be an error . 
+method overwritting is changin a function for a particular class and its objects . it is less used but good to know . getter and setter , get and set keyword are used , get runs while getting an info and sets run while setting or changing a value or a property . static keyword bhi hai . 
+instamceOf : it is used to confirm whether this object belongs to this class returns a boolean . syntax : 
+<object instanceOf <class> 
