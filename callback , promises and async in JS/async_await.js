@@ -24,7 +24,9 @@
 
 // GetAllData()
 
-
+// setInterval(()=> {
+//     let 
+// })
 
 function change_Html (HTML,index){ return new Promise((resolve,reject)=> {
     let ram = Math.floor(Math.random()*(7)+1) ;
@@ -40,8 +42,9 @@ async function hacker() {
     await change_Html(" Initializing Hacking " , 0)
     await change_Html(" Reading your files " , 1)
     await change_Html(" Password detected " , 2)
-    await change_Html(" Send all Passwords and personal files to Server " , 3)
+    await change_Html(" Sending all Passwords and personal files to Server " , 3)
     await change_Html(" Cleaning Up " , 4)
 }
 
-hacker()
+//  hacker()  
+

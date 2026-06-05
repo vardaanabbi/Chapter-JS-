@@ -239,3 +239,25 @@ you must use super keyword  with same paramter to be passed  to call constructor
 method overwritting is changin a function for a particular class and its objects . it is less used but good to know . getter and setter , get and set keyword are used , get runs while getting an info and sets run while setting or changing a value or a property . static keyword bhi hai . 
 instamceOf : it is used to confirm whether this object belongs to this class returns a boolean . syntax : 
 <object instanceOf <class> 
+
+to get a random numer in a specific range say for a to b is :
+a + (b-a)*Math.random() ab iski range a to b me ayegi . 
+
+Advanced JS concepts : IIFE (immediately invoked function expression) is one concept which is already mentioned above .
+next concept is Destructuring : example if you say ; let x,y = [2,5] and then you print value of x , y then it is not gonna assign x , to array items but if you type let [x,y] = [4,8,5] then it will assign x , to array items as 4 , 8 to x , y . 
+one more thing if you do like [x,y,...<variable>] = [23,67,84,98,71,12,35] , then x , y = 23 , 67 and variable will hold array of [84,98,71,12,35] . 
+in objects : let obj = {a:1 , b:2 , c:3} , let {c,d} = obj then value of c and d will hold value of 1,2 . 
+spread operator : spread the array and apply operations to values acc to function . 
+if you try to create an object like : const arr = [2,6,3] , const obj = {...arr} , then obj will be like 
+{0:2 , 1:6 , 2:3} . 
+variable declared outsude a func becomes global and variable declared within the func becomes local . 
+
+Hoisting : refers to the process where interpreter appears to move the declerations to the top of the code before execution . works onlyin case of var ; for ex : 
+
+console.log(r)
+
+
+var r = 3
+
+here it should display an error because you have defined variable after executing the command but it doesn't displays an error and shows value as undefined which shows that it appear like interpreter has moved the var r to the top just above console.log(r) block without assigning any value . remember it doesn't happens it just appears like that . 
+
