@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Currency_Converter - Convert your current at the real time </title>
+    <link rel="stylesheet" href="currency.css">
+</head>
+<body>
+    <nav> 
+        <div class="logo"> logo </div>
+
+       <ul>
+
+        <li> <a href="/"> Home </a> </li>
+        <li> <a href="/"> About Us </a> </li>
+        <li> <a href="/"> Contact Us </a> </li>
+
+       </ul>
+  
+    </nav>
+    
+    <div class="container"> 
+        <h1> Choose a currency to convert </h1>
+        <form action="currency_converter.js" method="get">
+            <label for="quantity">Choose Amount to convert</label>
+            <input type="number" name="quantity" min="1" >
+            <label for="currency"> Choose a currency</label>
+            <select name="currency">
+                <option value="INR"> INR </option>
+                <option value="USD"> USD </option>
+                <option value="EUR"> EURO </option>
+            </select> 
+            <button class="btn" type="submit"> Submit </button>
+        </form>
+        <div class="output"> 
+            <h2> Here is your Converted values in different Currencies </h2>
+
+            <table> 
+                <thead> 
+                    <tr>
+                        <th> currency </th>
+                        <th> currency rate </th>
+                        <th> your amount </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                </tbody> 
+            </table>
+
+
+        </div>
+    </div>
+
+    <footer>  
+        Copyright &copy; All rights reserved 
+    </footer>
+
+    <script src="currency_converter.js"> </script>
+</body>
+</html>
